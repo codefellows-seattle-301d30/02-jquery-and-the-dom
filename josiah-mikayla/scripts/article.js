@@ -14,6 +14,7 @@ function Article (rawDataObj) {
   this.publishedOn = rawDataObj.publishedOn;
   this.body = rawDataObj.body;
   articles.push(this);
+
 }
 
 Article.prototype.toHtml = function() {
