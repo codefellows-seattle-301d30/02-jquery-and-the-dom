@@ -30,7 +30,7 @@ Article.prototype.toHtml = function() {
   $newArticle.attr('href', this.authorUrl);
   $newArticle.find('a').text(this.author);
   $newArticle.find('.article-body').html(this.body);
-  /* TODO: Now use jQuery traversal and setter methods to fill in the rest of the current template clone with values of the properties of this particular Article instance.
+  /* DONE: Now use jQuery traversal and setter methods to fill in the rest of the current template clone with values of the properties of this particular Article instance.
     We need to fill in:
       1. author name,
       2. author url,
@@ -51,17 +51,9 @@ rawData.sort(function(a,b) {
 
 // DONE: Refactor these for loops using the .forEach() array method.
 
-// for(let i = 0; i < rawData.length; i++) {
-//   articles.push(new Article(rawData[i]));
-// }
-
 rawData.forEach(function(object) {
   articles.push(new Article(object));
 })
-
-// for(let i = 0; i < articles.length; i++) {
-//   $('#articles').append(articles[i].toHtml());
-// }
 
 articles.forEach(function(object) {
   $('#articles').append(object.toHtml());
