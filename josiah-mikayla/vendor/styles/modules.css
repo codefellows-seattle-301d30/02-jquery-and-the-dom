@@ -33,3 +33,11 @@ time{
     float: left;
     max-width: 100%;
 }
+
+.template {
+  display: none;
+}
+
+.draft {
+  display: visible;
+}
