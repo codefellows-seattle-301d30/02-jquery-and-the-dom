@@ -29,6 +29,10 @@ Project uses HTML, CSS, JavaScript and Markdown
 
 02-14-2018 10:40am - Updated Article constructor function to pull data from blogArticles.js. Hid items with 'template' class, verified 'articles' array is being populated with articles.
 
+02-14-2018 11:30am - Made blog entries appear by adding jQuery traversal and setter methods, added more constructor function properties
+
+02-14-2018 12:00pm - Reactivated the sort function which had been deactivated for testing, and refactored for loops with the .forEach.
+
 
 ## Credits and Collaborations
 

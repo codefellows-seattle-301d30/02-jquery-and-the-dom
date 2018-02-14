@@ -10,7 +10,6 @@ let articles = [];
 function Article (rawDataObj) {
   // DONE: Use the JS object that is passed in to complete this constructor function:
   // Save ALL the properties of `rawDataObj` into `this`
-  this.rawDataObj = rawDataObj;
 
   this.title = rawDataObj.title;
   this.category = rawDataObj.category;
@@ -45,8 +44,6 @@ Article.prototype.toHtml = function() {
   $newArticle.find('.article-body').html(this.body);
 
 
-
-
   // REVIEW: Display the date as a relative number of 'days ago'
   $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
   $newArticle.append('<hr>');
@@ -55,15 +52,18 @@ Article.prototype.toHtml = function() {
 
 rawData.sort(function(a,b) {
   // REVIEW: Take a look at this sort method; This may be the first time we've seen it. Look at the docs and think about how the dates would be sorted if the callback were not included in this method.
-  // return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+  return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
 
 // TODO: Refactor these for loops using the .forEach() array method.
 
-for(let i = 0; i < rawData.length; i++) {
-  articles.push(new Article(rawData[i]));
-}
+rawData.forEach( function (element) {
+  articles.push(new Article(element));
+});
 
-for(let i = 0; i < articles.length; i++) {
-  $('#articles').append(articles[i].toHtml());
-}
+articles.forEach( function(element) {
+  $('#articles').append(element.toHtml());
+});
+
+
+
