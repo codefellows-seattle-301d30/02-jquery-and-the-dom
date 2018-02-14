@@ -5,14 +5,14 @@ let articles = [];
 // COMMENT: What is the purpose of the following function? Why is its name capitalized? Explain the context of "this" within the function. What does "rawDataObj" represent?
 // PUT YOUR RESPONSE HERE
 
-function Article (title, category, author, authorUrl, publishedOn, body) {
-  this.title = title;
-  this.category = category;
-  this.author = author;
-  this.authorUrl = authorUrl;
-  this.publishedOn = publishedOn;
-  this.body = body;
-  articles.push(this);
+function Article (rawDataObj) {
+  this.title = rawDataObj.title;
+  this.category = rawDataObj.category;
+  this.author = rawDataObj.author;
+  this.authorUrl = rawDataObj.authorUrl;
+  this.publishedOn = rawDataObj.publishedOn;
+  this.body = rawDataObj.body;
+  // articles.push(this);
   // DONE: Use the JS object that is passed in to complete this constructor function:
   // Save ALL the properties of `rawDataObj` into `this`
 }
@@ -64,6 +64,6 @@ for(let i = 0; i < rawData.length; i++) {
   articles.push(new Article(rawData[i]));
 }
 
-for(let i = 0; i < articles.length; i++) {
-  $('#articles').append(articles[i].toHtml());
-}
+// for(let i = 0; i < articles.length; i++) {
+//   $('#articles').append(articles[i].toHtml());
+// }
