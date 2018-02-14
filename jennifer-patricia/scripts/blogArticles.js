@@ -1,7 +1,7 @@
 'use strict';
 
 // COMMENT: How is this data utilized within our blog app? What is the structure of this data (your response should include the terms "object", "array", and "key/value pairs")?
-// PUT YOUR RESPONSE HERE
+// rawData is an array of objects. Each object contains key/value pairs: that is, a piece of data (value) with an associated name (its key). The data includes title, category, author, author Url, date published, and text. This data is used to populate the blog with blog entries.
 
 let rawData = [
   {

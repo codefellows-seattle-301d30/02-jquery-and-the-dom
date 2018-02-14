@@ -16,7 +16,6 @@ Fork and clone the repo at:
 
 
 
-
 ## Architecture
 
 Project uses HTML, CSS, JavaScript and Markdown
@@ -27,6 +26,8 @@ Project uses HTML, CSS, JavaScript and Markdown
 02-14-2018 9:15am - Forked and cloned repo, initial setup by duplicating starter code, adding README, license.
 
 02-14-2018 9:40am - Completed repo setup with normalize.css and empty custom CSS files.
+
+02-14-2018 10:40am - Updated Article constructor function to pull data from blogArticles.js. Hid items with 'template' class, verified 'articles' array is being populated with articles.
 
 
 ## Credits and Collaborations
