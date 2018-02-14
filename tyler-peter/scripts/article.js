@@ -21,16 +21,22 @@ Article.prototype.toHtml = function() {
   // Appending something moves it from where it was to the new target location, but cloning() creates a new instance of the target object.
 
   let $newArticle = $('article.template').clone();
-  /* TODO: This cloned article still has a class of template. In our modules.css stylesheet, we should give all elements with a class of template a display of none so that our template does not display in the browser. But, we also need to make sure we're not accidentally hiding our cloned article. */
+  /* done: This cloned article still has a class of template. In our modules.css stylesheet, we should give all elements with a class of template a display of none so that our template does not display in the browser. But, we also need to make sure we're not accidentally hiding our cloned article. */
 
   if (!this.publishedOn) $newArticle.addClass('draft');
-  $newArticle.attr('data-category', this.category);
 
+  $newArticle.attr('data-category', this.category);
+  console.log(this.title);
   /* TODO: Now use jQuery traversal and setter methods to fill in the rest of the current template clone with values of the properties of this particular Article instance.
     We need to fill in:
+        find correct element
+        set html value to ______
       1. author name,
       2. author url,
       3. article title,
+
+        select the h1
+        add text content into it that is this.title
       4. article body, and
       5. publication date. */
 
@@ -40,10 +46,10 @@ Article.prototype.toHtml = function() {
   return $newArticle;
 };
 
-rawData.sort(function(a,b) {
-  // REVIEW: Take a look at this sort method; This may be the first time we've seen it. Look at the docs and think about how the dates would be sorted if the callback were not included in this method.
-  return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
-});
+// rawData.sort(function(a,b) {
+//   // REVIEW: Take a look at this sort method; This may be the first time we've seen it. Look at the docs and think about how the dates would be sorted if the callback were not included in this method.
+//   return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+// });
 
 // TODO: Refactor these for loops using the .forEach() array method.
 
@@ -52,5 +58,6 @@ for(let i = 0; i < rawData.length; i++) {
 }
 
 for(let i = 0; i < articles.length; i++) {
-  $('#articles').append(articles[i].toHtml());
+  // console.log('hit', i);
+  $('#articles').append(`<h1>${articles[i].title}</h1>`); //articles[i].toHtml()
 }
