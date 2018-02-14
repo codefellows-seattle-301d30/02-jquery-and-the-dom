@@ -1,0 +1,35 @@
+.byline{
+    color: grey;
+    display: inline;
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+address{
+    display: inline;
+}
+
+address a{
+    text-decoration: none;
+    font-weight: bold;
+    color: grey;
+}
+
+time{
+    display: inline;
+}
+
+.article-body{
+    padding:20px;
+    font-size: 18px;
+}
+
+.pull-right{
+    float: right;
+    max-width: 100%;
+}
+
+.pull-left{
+    float: left;
+    max-width: 100%;
+}
