@@ -14,7 +14,6 @@ function Article (rawDataObj) {
   this.authorUrl = rawDataObj.authorUrl;
   this.publishedOn = rawDataObj.publishedOn
   this.body = rawDataObj.body
-  articles.push(this);
 }
 
 Article.prototype.toHtml = function() {
@@ -50,7 +49,7 @@ rawData.sort(function(a,b) {
   return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
 
-// TODO: Refactor these for loops using the .forEach() array method.
+// DONE: Refactor these for loops using the .forEach() array method.
 
 // for(let i = 0; i < rawData.length; i++) {
 //   articles.push(new Article(rawData[i]));
