@@ -20,8 +20,11 @@ function Article (rawDataObj) {
 Article.prototype.toHtml = function() {
   // COMMENT: What is the benefit of cloning the article? (see the jQuery docs)
   // PUT YOUR RESPONSE HERE
+$('p').append('name', 'this.author');
 
   let $newArticle = $('article.template').clone();
+  $newArticle.append('something');
+  console.log($newArticle);
   /* TODO: This cloned article still has a class of template. In our modules.css stylesheet, we should give all elements with a class of template a display of none so that our template does not display in the browser. But, we also need to make sure we're not accidentally hiding our cloned article. */
 
   if (!this.publishedOn) $newArticle.addClass('draft');
@@ -34,19 +37,10 @@ Article.prototype.toHtml = function() {
       3. article title,
       4. article body, and
       5. publication date. */
-
-  var greeting = 'HELLLO';
-  console.log(greeting);
-
-  // $('p').attr('data-category', 'title');    
-  // $('body').data('author', 'name');
-  
-
-  // $('body').html('<p>HELOOOOOOO</p>');
-
- 
-  
-
+  $(document).ready(function () {
+    $("body").append(this.articles[0]);
+    });
+    
   // REVIEW: Display the date as a relative number of 'days ago'
   $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
   $newArticle.append('<hr>');
@@ -67,3 +61,5 @@ for(let i = 0; i < rawData.length; i++) {
 // for(let i = 0; i < articles.length; i++) {
 //   $('#articles').append(articles[i].toHtml());
 // }
+
+$('#articles').append(articles[0].toHtml());

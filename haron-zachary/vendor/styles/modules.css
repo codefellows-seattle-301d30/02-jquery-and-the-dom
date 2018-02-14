@@ -15,4 +15,7 @@ ul {
   display: block;
   
 }
-    
+
+.template {
+  display: none;
+}
