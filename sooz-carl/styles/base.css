@@ -1,12 +1,13 @@
 body {
   font-family: sans-serif;
 }
+
 .site-header {
   background-color: #ffeaaa;
 }
 
 h1 {
-  margin: 0.37em 0;
+  margin: 0.37vh 0;
 }
 
 a {
