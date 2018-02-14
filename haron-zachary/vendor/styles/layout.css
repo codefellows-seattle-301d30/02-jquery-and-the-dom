@@ -5,3 +5,7 @@ img {
 .icon-menu {
   width: fit-content;
 }
+
+.template {
+  display: none;
+}
