@@ -18,10 +18,10 @@ function Article (rawDataObj) {
 
 Article.prototype.toHtml = function() {
   // COMMENT: What is the benefit of cloning the article? (see the jQuery docs)
-  // PUT YOUR RESPONSE HERE
+  // Cloning copies the matched elements as well as all of their descendent elements and text nodes. It is a convenient way to duplicate elements on a page. You can modify the cloned elements or their contents before re-inserting them into the document.
 
-  let $newArticle = $('article.template').clone();
-  /* TODO: This cloned article still has a class of template. In our modules.css stylesheet, we should give all elements with a class of template a display of none so that our template does not display in the browser. But, we also need to make sure we're not accidentally hiding our cloned article. */
+  let $newArticle = $('article.template').clone().removeClass('template');
+  /* DONE: This cloned article still has a class of template. In our modules.css stylesheet, we should give all elements with a class of template a display of none so that our template does not display in the browser. But, we also need to make sure we're not accidentally hiding our cloned article. */
 
   if (!this.publishedOn) $newArticle.addClass('draft');
   $newArticle.attr('data-category', this.category);
@@ -33,6 +33,9 @@ Article.prototype.toHtml = function() {
       3. article title,
       4. article body, and
       5. publication date. */
+  $newArticle.find('h1').text(this.title);
+  $newArticle.find('a').attr('href', this.authorURL).text(this.author);
+  $newArticle.find('.article-body').html(this.body);
 
   // REVIEW: Display the date as a relative number of 'days ago'
   $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
@@ -50,10 +53,11 @@ rawData.sort(function(a,b) {
 // for(let i = 0; i < rawData.length; i++) {
 //   articles.push(new Article(rawData[i]));
 // }
-rawData.forEach(function() {
-  articles.push(new Article(rawData[i]));
+rawData.forEach(function(rawData) {
+  articles.push(new Article(rawData));
 });
 
 for(let i = 0; i < articles.length; i++) {
   $('#articles').append(articles[i].toHtml());
 }
+
