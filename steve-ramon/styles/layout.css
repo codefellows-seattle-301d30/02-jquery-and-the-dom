@@ -6,3 +6,7 @@
   address {
     display: inline-block;
   }
+
+  article.template {
+    display: none;
+  }

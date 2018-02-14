@@ -6,9 +6,9 @@ let articles = [];
 // It is a constructor function.  The capitalized name is what sets it as a constructor function.  This refers this object you are making with the constuctor. The parameter "rawDataObj" will be the actual words from the article that will be used to build the article object.
 
 function Article (rawDataObj) {
-  // TODO: Use the JS object that is passed in to complete this constructor function:
+  // : Use the JS object that is passed in to complete this constructor function:
   // Save ALL the properties of `rawDataObj` into `this`
-  this.title = rawData.title;
+  this.title = rawDataObj.title;
   this.category = rawDataObj.category;
   this.author = rawDataObj.author;
   this.authorUrl = rawDataObj.authorUrl;
@@ -22,11 +22,15 @@ Article.prototype.toHtml = function() {
   // Cloning is like using copy and paste and append is cut and paste.  Using clone will allow you to keep the original and put a copy of it where you want instead of just moving it so you can use it each time you use this method.
 
   let $newArticle = $('article.template').clone();
-  /* TODO: This cloned article still has a class of template. In our modules.css stylesheet, we should give all elements with a class of template a display of none so that our template does not display in the browser. But, we also need to make sure we're not accidentally hiding our cloned article. */
+  /* DONE: This cloned article still has a class of template. In our modules.css stylesheet, we should give all elements with a class of template a display of none so that our template does not display in the browser. But, we also need to make sure we're not accidentally hiding our cloned article. */
 
   if (!this.publishedOn) $newArticle.addClass('draft');
   $newArticle.attr('data-category', this.category);
-
+  $newArticle.attr('class', 'clearfix');
+  $newArticle.find('h1').html(this.title);
+  $newArticle.attr('href', this.authorUrl);
+  $newArticle.find('a').text(this.author);
+  $newArticle.find('.article-body').html(this.body);
   /* TODO: Now use jQuery traversal and setter methods to fill in the rest of the current template clone with values of the properties of this particular Article instance.
     We need to fill in:
       1. author name,
