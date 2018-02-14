@@ -1,5 +1,5 @@
 'use strict';
-
+alert('hello world');
 let articles = [];
 
 // COMMENT: What is the purpose of the following function? Why is its name capitalized? Explain the context of "this" within the function. What does "rawDataObj" represent?
