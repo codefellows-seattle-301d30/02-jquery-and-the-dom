@@ -1,0 +1,18 @@
+@media only screen and (min-width: 640px) {
+  .icon-menu {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+
+ul {
+  display: none;
+  }
+}
+
+.icon-menu:hover + ul {
+  display: block;
+  
+}
+    
