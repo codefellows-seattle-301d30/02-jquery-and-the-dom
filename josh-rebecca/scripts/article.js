@@ -3,7 +3,7 @@
 let articles = [];
 
 // COMMENT: What is the purpose of the following function? Why is its name capitalized? Explain the context of "this" within the function. What does "rawDataObj" represent?
-// PUT YOUR RESPONSE HERE
+// "this" is a constructer function that takes properties of instances. It's capitilized because that is best practice to show that it is a constructor. "this" is used for that particular instance of the object. "rawDataObject" repersents that the instances where passing thru the constructer.
 
 function Article (rawDataObj) {
   // Done: Use the JS object that is passed in to complete this constructor function:
@@ -26,15 +26,11 @@ Article.prototype.toHtml = function() {
   if (!this.publishedOn) $newArticle.addClass('draft');
   $newArticle.attr('data-category', this.category);
 
-  /* TODO: Now use jQuery traversal and setter methods to fill in the rest of the current template clone with values of the properties of this particular Article instance.
+  /* DONE: Now use jQuery traversal and setter methods to fill in the rest of the current template clone with values of the properties of this particular Article instance.
     We need to fill in:  */
   $newArticle.find('h1').text(this.title);
   $newArticle.find('a').attr('href', this.author);
   $newArticle.find('time').attr(date[time], 'p').html();
-  // 1. author name,
-  // 2. author url,
-  // 4. article body, and
-  // 5. publication date.
 
   // REVIEW: Display the date as a relative number of 'days ago'
   $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
@@ -47,7 +43,7 @@ rawData.sort(function(a,b) {
   return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
 
-// TODO: Refactor these for loops using the .forEach() array method.
+// DONE: Refactor these for loops using the .forEach() array method.
 
 articles.forEach(function data(rawData)
 // for(let i = 0; i < rawData.length; i++) 

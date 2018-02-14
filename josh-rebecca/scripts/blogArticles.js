@@ -1,7 +1,7 @@
 'use strict';
 
 // COMMENT: How is this data utilized within our blog app? What is the structure of this data (your response should include the terms "object", "array", and "key/value pairs")?
-// PUT YOUR RESPONSE HERE
+// This is an instance of the object that we are passing thru the constructer. The data on the left is the key, the data on the right is the value of the key that is passed thru our constructer. It is all stored in the articles array. 
 
 let rawData = [
   {
