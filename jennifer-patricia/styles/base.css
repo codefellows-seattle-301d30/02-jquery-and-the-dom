@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif;
+}
+.site-header {
+  background-color: #ffeaaa;
+}
+
+h1 {
+  margin: 0.37em 0;
+}
+
+a {
+  color: #777;
+  text-decoration: none;
+}
+
+.article-body {
+  line-height: 1.5;
+}
