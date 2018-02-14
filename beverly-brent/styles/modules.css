@@ -1,0 +1,94 @@
+.main-nav ul {
+  display: none;
+  padding-left: 0;
+}
+
+.main-nav:hover ul {
+  display: block;
+}
+
+.main-nav li {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 5vh;
+}
+
+a {
+  color: grey;
+  text-decoration: none;
+}
+
+hr {
+  border-color: lightgrey;
+}
+
+.icon-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-top: 1px;
+  font-size: 10vh;
+}
+
+h1 {
+  font-size: 9vh;
+  margin: 2vh 0;
+}
+
+h2 {
+  font-size: 5vh;
+}
+
+#about header, #about h2 {
+  font-size: 5vh;
+  font-weight: normal;
+}
+
+img {
+  margin: 1vh;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.about {
+  display: block;
+}
+
+footer {
+  text-align: center;
+}
+
+@media only screen and (min-width: 640px) {
+  .icon-menu {
+    display: none;
+  }
+
+  .main-nav[disabled]:hover ul {
+    pointer-events: none;
+  }
+
+  .main-nav hr {
+    display: none;
+  }
+
+  .main-nav ul {
+    display: block;
+  }
+
+  .main-nav li {
+    display: inline-block;
+    margin-left: 2vw;
+  }
+
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
