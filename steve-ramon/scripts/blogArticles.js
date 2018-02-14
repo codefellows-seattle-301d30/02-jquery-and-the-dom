@@ -1,7 +1,7 @@
 'use strict';
 
 // COMMENT: How is this data utilized within our blog app? What is the structure of this data (your response should include the terms "object", "array", and "key/value pairs")?
-// PUT YOUR RESPONSE HERE
+// These are objects that contain the information am]nd text for each blog article.  This is structured as an object with parameters and values, but no methods.  It will be used in the Article constructor to make an Article object.
 
 let rawData = [
   {
