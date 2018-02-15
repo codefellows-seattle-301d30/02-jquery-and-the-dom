@@ -4,6 +4,7 @@ let articles = [];
 
 // COMMENT: What is the purpose of the following function? Why is its name capitalized? Explain the context of "this" within the function. What does "rawDataObj" represent?
 // PUT YOUR RESPONSE HERE
+**save ALL the properties of 'rawDataObj' into 'this'**
 
 function Article (rawDataObj) {
   this.title = rawDataObj.title;
@@ -27,6 +28,10 @@ $('p').append('name', 'this.author');
   console.log($newArticle);
   /* TODO: This cloned article still has a class of template. In our modules.css stylesheet, we should give all elements with a class of template a display of none so that our template does not display in the browser. But, we also need to make sure we're not accidentally hiding our cloned article. */
 
+  **$newArticle.removeClass('template');
+  if (!this.publishedOn) $newArticle.addClass('draft');
+  $newArticle.attr('data-category', this.category);**
+
   if (!this.publishedOn) $newArticle.addClass('draft');
   $newArticle.attr('data-category', this.category);
 
@@ -41,6 +46,11 @@ $('p').append('name', 'this.author');
     $("body").append(this.articles[0]);
     });
     
+**$newArticle.find('.byline a').html(this.author);**
+**$newArticle.find('.byline a').attr('href', this.authorUrl);**
+**$newArticle.find('h1:first')
+
+
   // REVIEW: Display the date as a relative number of 'days ago'
   $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
   $newArticle.append('<hr>');
@@ -57,9 +67,15 @@ rawData.sort(function(a,b) {
 for(let i = 0; i < rawData.length; i++) {
   articles.push(new Article(rawData[i]));
 }
+**rawData.forEach(function(aritcleObject) {
+  articles.push(new Article(articleObject));
+}**
 
 // for(let i = 0; i < articles.length; i++) {
 //   $('#articles').append(articles[i].toHtml());
 // }
 
-$('#articles').append(articles[0].toHtml());
+**articles.forEach(function(article){
+  $('#articles').append(article.toHtml());
+})**
+
