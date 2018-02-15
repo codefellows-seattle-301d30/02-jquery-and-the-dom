@@ -20,7 +20,7 @@ Article.prototype.toHtml = function() {
   // COMMENT: What is the benefit of cloning the article? (see the jQuery docs)
   // Cloning allows you to copy the set of matching elements and their descendant elements. You can also modify the elements before reinseting them into the document. 
 
-  let $newArticle = $('article.template').clone().remove('article.template');
+  let $newArticle = $('article.template').clone().removeClass('template');
   /* DONE: This cloned article still has a class of template. In our modules.css stylesheet, we should give all elements with a class of template a display of none so that our template does not display in the browser. But, we also need to make sure we're not accidentally hiding our cloned article. */
 
   if (!this.publishedOn) $newArticle.addClass('draft');
@@ -28,9 +28,10 @@ Article.prototype.toHtml = function() {
 
   /* DONE: Now use jQuery traversal and setter methods to fill in the rest of the current template clone with values of the properties of this particular Article instance.
     We need to fill in:  */
+  $newArticle.find('.byline a').html(this.author);
   $newArticle.find('h1').text(this.title);
-  $newArticle.find('a').attr('href', this.author);
-  $newArticle.find('time').attr(date[time], 'p').html(this.publishedOn);
+  $newArticle.find('a').attr('href', this.authorUrl).html(this.author);
+  $newArticle.find('time').attr('datetime', this.publishedOn);
 
   // REVIEW: Display the date as a relative number of 'days ago'
   $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
@@ -45,14 +46,10 @@ rawData.sort(function(a,b) {
 
 // DONE: Refactor these for loops using the .forEach() array method.
 
-articles.forEach(function data(rawData)
-// for(let i = 0; i < rawData.length; i++) 
-{
-  articles.push(new Article(rawData[i]));
+rawData.forEach(function(articleObject) {
+  articles.push(new Article(articleObject));
 });
 
-articles.forEach(function articleId(articles)
-// for(let i = 0; i < articles.length; i++)
-{
-  $('#articles').append(articles[i].toHtml());
+articles.forEach(function(article){
+  $('#articles').append(article.toHtml());
 });
