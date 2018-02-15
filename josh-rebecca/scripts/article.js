@@ -28,8 +28,9 @@ Article.prototype.toHtml = function() {
 
   /* DONE: Now use jQuery traversal and setter methods to fill in the rest of the current template clone with values of the properties of this particular Article instance.
     We need to fill in:  */
+  $newArticle.find('.byline a').html(this.author);
   $newArticle.find('h1').text(this.title);
-  $newArticle.find('a').attr('href', this.author);
+  $newArticle.find('a').attr('href', this.authorUrl).html(this.author);
   $newArticle.find('time').attr('datetime', this.publishedOn);
 
   // REVIEW: Display the date as a relative number of 'days ago'
@@ -45,14 +46,10 @@ rawData.sort(function(a,b) {
 
 // DONE: Refactor these for loops using the .forEach() array method.
 
-rawData.forEach(function(rawData)
-// for(let i = 0; i < rawData.length; i++) 
-{
-  articles.push(new Article(rawData).toHtml());
+rawData.forEach(function(articleObject) {
+  articles.push(new Article(articleObject));
 });
 
-articles.forEach(function(articles)
-// for(let i = 0; i < articles.length; i++)
-{
-  $('#articles').append(articles);
+articles.forEach(function(article){
+  $('#articles').append(article.toHtml());
 });
