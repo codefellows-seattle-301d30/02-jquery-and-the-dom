@@ -55,13 +55,15 @@ rawData.sort(function(a,b) {
 
 // DONE: Refactor these for loops using the .forEach() array method.
 
-// for(let i = 0; i < rawData.length; i++) {
-//   articles.push(new Article(rawData[i]));
-// }
 rawData.forEach(function(rawDataObj) {
   articles.push(new Article(rawDataObj));
 }
 
-for(let i = 0; i < articles.length; i++) {
-  $('#articles').append(articles[i].toHtml());
-}
+rawData.forEach(function(newArticle) {
+  articles.push(new Article(newArticle));
+});
+
+
+articles.forEach(function(appendArticle){
+  $('#articles').append(appendArticle.toHtml());
+});
