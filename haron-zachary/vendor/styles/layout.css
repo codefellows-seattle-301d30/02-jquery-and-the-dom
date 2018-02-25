@@ -2,8 +2,20 @@ img {
   width: 50vw;
 }
 
+main img{
+float: right;
+}
+
+.site-header {
+  background-color: rgb(231, 207, 97);
+}
+
 .icon-menu {
   width: fit-content;
+}
+
+.clearfix {
+  overflow: auto;
 }
 
 .template {
