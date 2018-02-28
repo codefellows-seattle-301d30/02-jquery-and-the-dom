@@ -52,7 +52,7 @@ rawData.sort(function(a,b) {
 
 // DONE: Refactor these for loops using the .forEach() array method.
 
-rawData.forEach(function(aritcleObject) {
+rawData.forEach(function(articleObject) {
   articles.push(new Article(articleObject));
 });
 
