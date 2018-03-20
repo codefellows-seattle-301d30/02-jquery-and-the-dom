@@ -1,0 +1,67 @@
+.template{
+    display: none;
+}
+
+.site-header {
+    background-color:#ffeaaa;
+    display: block;
+    margin:0px;
+    padding:15px;
+    position: relative;
+
+}
+.site-header h1 {
+    background-color:#ffeaaa;
+    margin:0px;
+    padding:0px;
+}
+
+.heading-group-h1{
+    margin-top:0px;
+    /* position: absolute;
+    top:0; */
+}
+
+ h1{
+    font-size:22px;
+}
+
+.heading-group-h1 h2{
+    font-size:18px;
+}
+ h2{
+    font-size:18px;
+}
+.main-nav{
+    font-size:18px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.pull-right{
+    float:right;
+    margin:15px;
+}
+
+.pull-left{
+    float:left;
+    margin:15px;
+}
+
+#articles{
+    width:100%;
+
+}
+
+header{
+    width:100%;
+}
+
+ main{
+    width:100%;
+    padding:15px;
+} 
+
+footer{
+    width:100%;
+    padding:15px;
+}
