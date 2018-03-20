@@ -69,11 +69,10 @@ rawData.forEach(element => {
 });
 
 
-// articles.forEach(function(element){
-//   $('#articles').append(element.toHtml());
-// });
+articles.forEach(element => {
+  $('#articles').append(element.toHtml());
+});
 
-for(let i = 0; i < articles.length; i++) { 
-  console.log(i + ' this is an article ' + articles[i].author);
-  $('#articles').append(articles[i].toHtml());
-}
+// for(let i = 0; i < articles.length; i++) { 
+//   $('#articles').append(articles[i].toHtml());
+// }
