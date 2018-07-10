@@ -5,10 +5,10 @@ let articles = [];
 // COMMENT: What is the purpose of the following function? Why is its name capitalized? Explain the context of "this" within the function. What does "rawDataObj" represent?
 // PUT YOUR RESPONSE HERE
 
-function Article (rawDataObj) {
+const Article = (rawDataObj) => {
   // TODO: Use the JS object that is passed in to complete this constructor function:
   // Save ALL the properties of `rawDataObj` into `this`
-}
+};
 
 Article.prototype.toHtml = function() {
   // COMMENT: What is the benefit of cloning the article? (see the jQuery docs)

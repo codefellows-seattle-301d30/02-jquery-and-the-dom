@@ -5,7 +5,7 @@ let articles = [];
 // DONE: What is the purpose of the following function? Why is its name capitalized? Explain the context of "this" within the function. What does "rawDataObj" represent?
 // We're saving all the properties of rawDataObj inside of our Article constructor so we can use .this to call those properties at a later time. Within the function, (rawDataObj) is a parameter where as rawDataObj.body is the actual body of text linked to the new article rawDataObj.
 
-function Article (rawDataObj) {
+const Article = (rawDataObj) => {
   this.title = rawDataObj.title;
   this.category = rawDataObj.category;
   this.author = rawDataObj.author;
@@ -15,9 +15,9 @@ function Article (rawDataObj) {
   // articles.push(this);
   // DONE: Use the JS object that is passed in to complete this constructor function:
   // Save ALL the properties of `rawDataObj` into `this`
-}
+};
 
-Article.prototype.toHtml = function() {
+Article.prototype.toHtml = () => {
   // COMMENT: What is the benefit of cloning the article? (see the jQuery docs)
   // By cloning the article, we can simply copy and paste or appent the article later where need be, since we'll be using this article over and over again we want a clone to be made so we can modify that clone and then append it.  The original template stays in tact as a result of only cloning it.
   let $newArticle = $('article.template').clone();
