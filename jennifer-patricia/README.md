@@ -1,6 +1,6 @@
 # Kilovolt Blog
 
-**Author**: Jennifer Williams Piper and Patricia Raftery
+**Authors**: Jennifer Williams Piper and Patricia Raftery
 
 **Version**: 1.0.0
 
@@ -16,10 +16,12 @@ Fork and clone the repo at:
 
 * update the js files to display blog posts using the details below (see architecture)
 
+* view index.html in a web browser
+
 
 ## Architecture
 
-Project uses HTML, CSS, JavaScript and Markdown. This application is designed with mobile first in mind, and extra css code for desktop viewers, with a breakpoint at 640px. The mobile viewers, to maximize screen space, start with the dropdown menu hidden, and the menu becomes visible when the hamburger icon is hovered over. The desktop viewers do not see the hamburger icon, and can see the nav menu from the beginning.
+Project uses HTML, CSS, JavaScript and Markdown. This application is designed with mobile first in mind, and extra css code for desktop views, with a breakpoint at 640px. The mobile views, to maximize screen space, start with the dropdown menu hidden, and the menu becomes visible when the hamburger icon is hovered over. The desktop views do not see the hamburger icon, and can see the nav menu from the beginning.
 A constructor function is used for the articles. Blog articles are stored as objects in the rawData array. They are appended to the DOM using jQuery traversal and setter methods. Each article displays author, title, link to author page, time since publication, and blog entry.
 
 
@@ -38,6 +40,8 @@ A constructor function is used for the articles. Blog articles are stored as obj
 02-14-2018 1:00pm - Finished userstories for both users and developers
 
 02-14-2018 1:15pm - Updated readme, answered remaining comments in index and js
+
+08-03-2018 - Made hamburger menu stay open on hover. Updated readme.
 
 
 ## Credits and Collaborations
