@@ -7,10 +7,20 @@ main {
     right: 2px;
     font-size: 2.75em;
   }
+  .icon-menu:before {
+    float: right;
+  }
+  .icon-menu:hover {
+    height: 130px;
+  }
   .icon-menu + ul {
     display: none;
+    border-top: 1px solid lightgray;
   }
   .icon-menu:hover + ul {
+    display: block;
+  }
+  .icon-menu + ul:hover {
     display: block;
   }
   .heading-group-h1 {
