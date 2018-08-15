@@ -1,0 +1,64 @@
+main {
+  margin: 20px;
+  }
+  .icon-menu {
+    position: absolute;
+    top: 1px;
+    right: 2px;
+    font-size: 2.75em;
+  }
+  .icon-menu:before {
+    float: right;
+  }
+  .icon-menu:hover {
+    height: 130px;
+  }
+  .icon-menu + ul {
+    display: none;
+    border-top: 1px solid lightgray;
+  }
+  .icon-menu:hover + ul {
+    display: block;
+  }
+  .icon-menu + ul:hover {
+    display: block;
+  }
+  .heading-group-h1 {
+    padding: 10px 20px 0;
+  }
+  img {
+    margin: 15px;
+    width: 70%;
+  }
+  .pull-left {
+    float: left;
+  }
+  .pull-right {
+    float: right;
+  }
+  .clearfix:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+  #about {
+    margin-top: 15px;
+  }
+  footer {
+    text-align: center;
+    margin: 15px;
+  }
+  @media only screen and (min-width: 640px){
+    nav {
+      margin-left: 40px;
+    }
+    img {
+      width: auto;
+    }
+    .icon-menu{
+      display:none; 
+    }
+    .icon-menu + ul {
+      display: block;
+    }
+  }
