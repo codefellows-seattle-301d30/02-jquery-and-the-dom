@@ -1,0 +1,49 @@
+img{
+    max-width: 100%;
+}
+.icon-menu{
+    display: block;
+    float:right;
+    position: absolute;
+    right: 50px;
+    top:10px;
+    font-size:34px;
+
+}
+
+.icon-menu:hover + ul li{
+    display: block;
+}
+
+.main-nav ul{
+    margin-left:-50px;
+}
+.main-nav ul li{
+    display: none;
+    padding:10px;
+   
+    
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+@media (min-width: 640px) {
+  
+    .icon-menu{
+        display: none;
+    }
+    .main-nav ul li{
+        display: inline;
+        padding-left:20px;
+        /* margin-left:0px; */
+    }
+    .main-nav ul{
+        margin-left:-50px;
+    }
+    
+}
+
